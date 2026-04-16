@@ -10,7 +10,7 @@ import Coins from "../coinUI";
 import { useSaveEmail } from "@/hooks/useSaveEmail";
 
 export default function EmailSection() {
-  const { isOpen, setIsOpen, email, setEmail, loading, setLoading, error, setError, handleReserve,} = useSaveEmail();
+  const { isOpen, setIsOpen, email, setEmail, loading, setLoading, error, setError, handleReserve ,reserved,setReserved} = useSaveEmail();
   const isMobile = useIsMobile();
 
 
@@ -108,8 +108,8 @@ export default function EmailSection() {
 
       {/* COMMON DIALOG */}
       <CommonDialog
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
+        isOpen={reserved}
+        onClose={() => setReserved(!reserved)}
         contentClassName={`w-full   max-w-[50rem] max-h-[50vh] md:!max-w-[550px] overflow-y-auto p-3`}
       >
         {/* SUCCESS */}
@@ -137,7 +137,7 @@ export default function EmailSection() {
 
             <button
               className="btn-global group bg-sidebarGetCoinsBg px-6 py-2 rounded-[0.75rem] mt-3 !max-w-fit"
-              onClick={() => setIsOpen(false)}
+              onClick={() => setReserved(!reserved)}
             >
               <span>Got It</span>
             </button>

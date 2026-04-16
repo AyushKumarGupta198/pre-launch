@@ -38,5 +38,5 @@ export const useSaveEmail = () => {
       setLoading(false);
     }
   };
-  return { isOpen, setIsOpen, email, setEmail, loading, setLoading, error, setError, handleReserve, reserved };
+  return { isOpen, setIsOpen, email, setEmail, loading, setLoading, error, setError, handleReserve, reserved,setReserved };
 }
