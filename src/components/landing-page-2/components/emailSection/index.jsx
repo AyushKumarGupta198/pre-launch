@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { landingCoins,landingCoinMobile, landingInfo, preLandingHero } from "@/assets/png";
-import { name } from "@/assets/svg";
+import { logo2 } from "@/assets/svg";
 import Image from "next/image";
 import CommonDialog from "@/common/components/common-dialog";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -40,7 +40,7 @@ export default function EmailSection() {
               setError('');
               setEmail(e.target.value)
             }}
-            placeholder="Enter your Email address..."
+            placeholder="Enter Your Email Address"
             className="w-[500px] max-h-[66px] rounded-[0.65rem] border-none text-white text-[1.25rem] md:text-[1.5rem] shadow-[0_0_0_1px_rgba(255,255,255,0.06)] placeholder:text-[1.5rem] !pl-4"
           />
           {error && <p className="text-red-500 text-sm mt-1">{error}</p>}
@@ -59,10 +59,10 @@ export default function EmailSection() {
 
       {/* MOBILE */}
       <div
-        className="flex flex-col items-center justify-start gap-1 text-center md:hidden w-full h-[700px] bg-cover bg-center pt-2 min-h-screen"
+        className="flex flex-col items-center justify-start gap-1 text-center md:hidden w-full bg-cover bg-center pt-2 min-h-screen"
         style={{ backgroundImage: `url(${preLandingHero})` }}
       >
-        <Image src={name} alt="logo" width={80} height={80} />
+        <Image src={logo2} alt="logo" width={105} height={105} />
 
         <div className="font-semibold text-white text-[1.9rem] mx-auto">
           <span>Early Birds Get</span>
@@ -90,7 +90,7 @@ export default function EmailSection() {
               setError('');
               setEmail(e.target.value)
             }}
-            placeholder="Email address..."
+            placeholder="Email Address"
             className="w-[300px] max-h-[44px] rounded-[0.65rem] border-none text-white text-[0.75rem] shadow-[0_0_0_1px_rgba(255,255,255,0.06)] placeholder:text-[0.75rem] !pl-4"
           />
           {error && <p className="text-red-500 text-xs mt-1">{error}</p>}

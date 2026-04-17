@@ -21,7 +21,7 @@ export default function ForYouSection() {
       </div>
 
       <div className="flex gap-[1rem] overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory md:grid md:grid-cols-3 md:gap-[1.5rem] md:overflow-visible md:pb-0">
-        {ForYou.map((item) => (
+        {ForYou.map((item,index) => (
           <article key={item.title} className="relative min-w-[18.5rem] snap-start md:min-w-0">
             <div className="relative h-[17rem] md:h-[32rem]">
               <div
@@ -29,14 +29,14 @@ export default function ForYouSection() {
                 className={`absolute inset-x-0 bottom-0 h-[63%] rounded-[0.8rem] md:rounded-[1.75rem] ${item.bg?.startsWith('background:') ? '' : item.bg}`}
               />
 
-              <div className="absolute inset-x-0 top-[1.25rem] md:top-[1.75rem] flex justify-center pointer-events-none z-10">
+              <div className="absolute inset-x-0 top-[1rem] md:top-[1.75rem] flex justify-center pointer-events-none z-10">
                 <div className="flex h-[9rem]  w-[10rem] items-end justify-center md:h-[18rem] md:w-[18rem]">
                   <Image
                     src={item.image}
                     alt={item.title}
                     width={340}
                     height={340}
-                    className="h-full w-auto object-contain object-bottom"
+                    className={`h-full w-auto object-contain object-bottom ${index===0 && 'scale-150 mb-6 md:mr-8'}`}
                   />
                 </div>
               </div>

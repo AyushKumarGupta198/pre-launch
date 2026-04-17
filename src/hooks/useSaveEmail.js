@@ -9,10 +9,36 @@ export const useSaveEmail = () => {
       const [reserved,setReserved] = useState(false);
 
       const handleReserve = async () => {
-    if (!email || !email.includes("@")) {
-      setError("Please enter a valid email address.");
-      return;
-    }
+    if (!email) {
+    setError("Email is required.");
+    return;
+  }
+
+  const trimmedEmail = email.trim();
+
+  // Basic strong regex (covers most real-world cases)
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  if (!emailRegex.test(trimmedEmail)) {
+    setError("Please enter a valid email address.");
+    return;
+  }
+
+  // Extra safety checks
+  if (trimmedEmail.length > 254) {
+    setError("Email is too long.");
+    return;
+  }
+
+  if (trimmedEmail.startsWith(".") || trimmedEmail.endsWith(".")) {
+    setError("Invalid email format.");
+    return;
+  }
+
+  if (trimmedEmail.includes("..")) {
+    setError("Email cannot contain consecutive dots.");
+    return;
+  }
     const url = process.env.NEXT_PUBLIC_GOOGLE_SHEET_URL;
     setError('');
     setLoading(true);

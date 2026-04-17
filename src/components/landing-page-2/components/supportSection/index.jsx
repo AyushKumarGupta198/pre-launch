@@ -26,7 +26,7 @@ export default function SupportSection() {
                 setError('');
               }}
               placeholder="Enter Your Email Address"
-              className="w-[20rem] max-h-[3rem] rounded-[0.65rem] border-none  text-white text-[1.2rem] md:text-[1.5rem] shadow-[0_0_0_1px_rgba(255,255,255,0.06)] placeholder:text-[1rem] placeholder:text-start text-start !pl-4"
+              className="w-[17rem] md:w-[20rem] max-h-[3rem] rounded-[0.65rem] border-none  text-white text-[1.2rem] md:text-[1.5rem] shadow-[0_0_0_1px_rgba(255,255,255,0.06)] placeholder:text-[1rem] placeholder:text-start text-start !pl-4"
             />
             <button className="btn-global group bg-sidebarGetCoinsBg h-[3rem] text-white font-bold px-[13px] sm:px-3 md:!px-4 py-[9.5px] md:py-2 rounded-[0.75rem] text-[1.3rem] !max-w-[200px]" onClick={handleReserve} disabled={loading}>
               <span>{loading ? "Reseving...":"Reserve My Spot"}</span>
